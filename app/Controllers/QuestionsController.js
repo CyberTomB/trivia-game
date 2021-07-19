@@ -24,4 +24,8 @@ export default class QuestionsController {
    logTrivia() {
       console.log(ProxyState.trivia)
    }
+
+   checkAnswer(answer) {
+      questionsService.checkAnswer(answer)
+   }
 }

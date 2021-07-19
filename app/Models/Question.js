@@ -1,4 +1,4 @@
-import { generateId } from "../Utils/GenerateId"
+import { generateId } from "../Utils/GenerateId.js"
 
 export default class Question {
    constructor({ question, correct_answer, incorrect_answers, id = generateId() }) {
@@ -25,8 +25,8 @@ export default class Question {
    get TemplateQs() {
       let template = ''
       this.answers.forEach(a => {
-         console.log(a)
-         template += `<button onclick="console.log('${a}')">${a}</button>`
+
+         template += `<button onclick="app.questionsController.checkAnswer(${a == this.correct ? true : false})">${a}</button>`
       })
       return template
    }

@@ -12,4 +12,16 @@ class QuestionsSerivce {
       ProxyState.trivia = questions
    }
 
-   export const questionsService = new QuestionsSerivce()
+   checkAnswer(answer) {
+      let correct = `<div class="col-7 bg-success text-light text-center"><b>CORECT!!!</b></div>`
+      let wrong = `<div class="col-7 bg-danger text-dark text-center"><b>WRONG!!!</b></div>`
+      console.log(answer)
+      if (answer) {
+         document.getElementById('answer').innerHTML = correct
+      } else {
+         document.getElementById('answer').innerHTML = wrong
+      }
+   }
+}
+
+export const questionsService = new QuestionsSerivce()
