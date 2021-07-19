@@ -3,7 +3,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
 
-  trivia = []
+  questions = []
   game = {}
 }
 

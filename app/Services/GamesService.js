@@ -12,11 +12,11 @@ class GamesService {
 
       let apiQ = res.data.results.map(q => new Question(q))
       console.log('questions: ', apiQ)
-      const game = new Game({
+      ProxyState.questions = apiQ
+      ProxyState.game = new Game({
          questions: apiQ
       })
-      console.log(game)
-      ProxyState.game = game
+      console.log('proxystate qs:', ProxyState.questions, 'proxystate game:', ProxyState.game)
    }
 }
 

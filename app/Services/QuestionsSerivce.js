@@ -3,14 +3,14 @@ import Question from "../Models/Question.js";
 import { api } from "./AxiosService.js";
 
 class QuestionsSerivce {
-   async getQuestion() {
-      const res = await api.get()
+   // async getQuestion() {
+   //    const res = await api.get()
 
-      console.log('raw question: ', res.data.results)
+   //    console.log('raw question: ', res.data.results)
 
-      let questions = res.data.results.map(q => new Question(q))
-      ProxyState.trivia = questions
-   }
+   //    let questions = res.data.results.map(q => new Question(q))
+   //    ProxyState.trivia = questions
+   // }
 
    checkAnswer(answer) {
       let correct = `<div class="col-7 bg-success text-light text-center"><b>CORECT!!!</b></div>`
