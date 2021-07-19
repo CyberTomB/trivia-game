@@ -18,6 +18,16 @@ class GamesService {
       })
       console.log('proxystate qs:', ProxyState.questions, 'proxystate game:', ProxyState.game)
    }
+
+   nextQuestion() {
+      let index = ProxyState.game.index
+      console.log('index:', index, 'index length', ProxyState.questions.length)
+      if (index < ProxyState.questions.length - 1) {
+         ProxyState.game.index++
+         ProxyState.game = ProxyState.game
+         console.log(ProxyState.game.index)
+      }
+   }
 }
 
 export const gamesService = new GamesService()

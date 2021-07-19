@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { gamesService } from "../Services/GamesService.js";
 
-function _drawQuestion() {
+function _draw() {
    console.log('game object:', ProxyState.game)
    let currentQ = ProxyState.questions[ProxyState.game.index]
    let template = currentQ.Template
@@ -10,10 +10,12 @@ function _drawQuestion() {
 
 export default class GamesController {
 
+   constructor() {
+      ProxyState.on('game', _draw)
+   }
    async startGame() {
       try {
          await gamesService.startGame()
-         _drawQuestion()
       } catch (error) {
          window.alert("Something went wrong: " + error)
       }

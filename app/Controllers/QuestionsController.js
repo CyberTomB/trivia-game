@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { gamesService } from "../Services/GamesService.js";
 import { questionsService } from "../Services/QuestionsSerivce.js";
 
 
@@ -14,5 +15,6 @@ export default class QuestionsController {
 
    checkAnswer(answer) {
       questionsService.checkAnswer(answer)
+      gamesService.nextQuestion()
    }
 }
