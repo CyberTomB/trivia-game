@@ -1,8 +1,11 @@
+import { generateId } from "../Utils/GenerateId"
+
 export default class Question {
-   constructor({ question, correct_answer, incorrect_answers, id }) {
+   constructor({ question, correct_answer, incorrect_answers, id = generateId() }) {
       this.question = question
       this.correct = correct_answer
       this.answers = incorrect_answers
+      this.id = id
 
       let randIndex = Math.floor(Math.random() * (incorrect_answers.length + 1))
       this.answers.splice(randIndex, 0, correct_answer)

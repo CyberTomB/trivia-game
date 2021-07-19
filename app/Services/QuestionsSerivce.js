@@ -12,10 +12,4 @@ class QuestionsSerivce {
       ProxyState.trivia = questions
    }
 
-
-   checkAnswer(answer) {
-      if (answer == )
-   }
-}
-
-export const questionsService = new QuestionsSerivce()
+   export const questionsService = new QuestionsSerivce()

@@ -22,7 +22,22 @@
         </nav>
     </header>
     <main class="container">
-        <div id="app"></div>
+        <div class="row justify-content-center py-3" id="game">
+            <!-- <div class="col-6 card text-center">
+                <div class="card-title">QUESTION</div>
+                <div class="card-body">
+                    <button>A 1</button>
+                    <button>A 2</button>
+                    <button>A 3</button>
+                    <button>A 4</button>
+                </div>
+            </div> -->
+        </div>
+
+        <div id="test">
+            <button onclick="app.questionsController.getQuestion()">GET Q</button>
+            <button onclick="app.questionsController.logTrivia()">LOG</button>
+        </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
