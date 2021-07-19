@@ -2,16 +2,15 @@ import { ProxyState } from "../AppState.js";
 import { questionsService } from "../Services/QuestionsSerivce.js";
 
 
-function _draw() {
+function _drawQuestion() {
    let trivia = ProxyState.trivia
-   let template = ''
-   trivia.forEach(t => template += t.Template)
+   let template = trivia[0].Template
    document.getElementById('game').innerHTML = template
 }
 export default class QuestionsController {
 
    constructor() {
-      ProxyState.on('trivia', _draw)
+      ProxyState.on('trivia', _drawQuestion)
    }
    async getQuestion() {
       try {
